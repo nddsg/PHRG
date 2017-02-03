@@ -205,7 +205,6 @@ if __name__ == "__main__":
         ("r5", "U", ["S"], 0.9),
         ("r6", "U", ["a"], 0.1),
     ]
-    g = nx.Draw()
     g = Grammar('S')
     for (id, lhs, rhs, prob) in rules:
         g.add_rule(Rule(id, lhs, rhs, prob, False))
