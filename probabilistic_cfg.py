@@ -55,7 +55,7 @@ class Grammar(object):
                     unary_graph.add_edge(rule.lhs, rule.cfg_rhs[0], weight=rule.prob)
 
         try:
-            topological = nx.topological_sort(nx.DiGraph(unary_graph), reverse=True)
+            topological = list(reversed(list(nx.topological_sort(nx.DiGraph(unary_graph)))))#, reverse=True)
             unary_matrix = None
         except nx.NetworkXUnfeasible:
             topological = list(g.nonterminals)
